@@ -1,22 +1,39 @@
+import Navbar from './components/Navbar';
+import Services from './components/Services';
+import Projects from './components/Projects';
+import About from './components/About';
+import Contact from './components/Contact';
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white">
-      <div className="container mx-auto px-6 py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          موفقیت از اینجا شروع می‌شود
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-8">
-          این اولین قدم موفق تو در ساخت پورتفولیوی بین‌المللی است
-        </p>
-        <div className="space-x-4">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-            شروع کنیم
-          </button>
-          <button className="border border-white hover:bg-white hover:text-purple-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-            بیشتر بدانید
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+      <Navbar />
+      
+      <main className="pt-20">
+        <section id="home" className="container mx-auto px-6 py-24 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            I Build
+            <span className="text-cyan-400 block mt-2">Digital Experiences</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Specialized in creating fast, modern, and user-friendly websites for international businesses
+          </p>
+          <div className="space-x-4">
+            <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+              View My Work
+            </button>
+            <button className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+              Contact Me
+            </button>
+          </div>
+        </section>
+
+        <Services />
+        <Projects />
+        <About />
+        <Contact />
+        
+      </main>
     </div>
   );
 }
