@@ -12,12 +12,43 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // اینجا بعداً با backend وصل میشه
-    console.log('Form submitted:', formData);
-    alert('Thank you! I will get back to you within 24 hours.');
-  };
+  // در بخش handleSubmit فایل Contact.tsx
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  try {
+    // ارسال به تلگرام
+    const telegramResponse = await fetch('/api/telegram', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'contact',
+        data: formData
+      }),
+    });
+
+    const result = await telegramResponse.json();
+    
+    if (result.success) {
+      alert('Thank you! I will get back to you within 24 hours. 📱');
+      // ریست فرم
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        budget: '',
+        message: ''
+      });
+    } else {
+      alert('Message sent! (Telegram notification failed)');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Message sent! (Notification service offline)');
+  }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({

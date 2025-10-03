@@ -1,3 +1,5 @@
+'use client';
+
 import Navbar from './components/Navbar';
 import Services from './components/Services';
 import Projects from './components/Projects';
@@ -5,6 +7,16 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 export default function Home() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
       <Navbar />
@@ -19,10 +31,16 @@ export default function Home() {
             Specialized in creating fast, modern, and user-friendly websites for international businesses
           </p>
           <div className="space-x-4">
-            <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+            >
               View My Work
             </button>
-            <button className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+            >
               Contact Me
             </button>
           </div>
