@@ -44,16 +44,16 @@ export default function About() {
               </h3>
               <p className="text-gray-300 mb-4 text-lg">
                 I'm a full-stack developer specializing in modern web technologies. 
-                My journey began 3+ years ago, and since then I've helped numerous 
+                My journey began 3+ years ago, and since then I&apos;ve helped numerous 
                 businesses establish their online presence with cutting-edge solutions.
               </p>
               <p className="text-gray-300 mb-4 text-lg">
                 I believe in <span className="text-cyan-400">code that matters</span> - 
-                every line should serve a purpose, whether it's improving user experience, 
+                every line should serve a purpose, whether it&apos;s improving user experience, 
                 boosting performance, or driving conversions.
               </p>
               <p className="text-gray-300 text-lg">
-                When I'm not coding, you'll find me exploring new technologies, 
+                When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
                 contributing to open-source projects, or optimizing web performance.
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function About() {
                 <div className="text-cyan-400 text-3xl mb-4">🔧</div>
                 <h4 className="text-white font-bold mb-2">Maintainable Code</h4>
                 <p className="text-gray-300 text-sm">
-                  Clean, documented code that's easy to scale and maintain over time
+                  Clean, documented code that&apos;s easy to scale and maintain over time
                 </p>
               </div>
             </div>

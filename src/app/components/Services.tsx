@@ -58,7 +58,7 @@ export default function Services() {
             Services That <span className="text-cyan-400">Drive Growth</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I don't just build websites - I create digital solutions that solve business problems and deliver measurable results.
+            I don&apos;t just build websites - I create digital solutions that solve business problems and deliver measurable results.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export default function Services() {
             Ready to Transform Your Online Presence?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Let's discuss how I can help you achieve your business goals with a custom web solution.
+            Let&apos;s discuss how I can help you achieve your business goals with a custom web solution.
           </p>
           <Link 
             href="/start-project"

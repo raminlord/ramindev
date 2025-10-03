@@ -108,7 +108,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               Start Your <span className="text-cyan-400">Project</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Let's turn your idea into a successful digital product. Fill out the form below and I'll get back to you within 2 hours.
+              Let&apos;s turn your idea into a successful digital product. Fill out the form below and I&apos;ll get back to you within 2 hours.
             </p>
           </div>
 
@@ -287,7 +287,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </button>
 
                   <p className="text-center text-gray-400 text-sm">
-                    I'll contact you within 2 hours to discuss your project
+                    I&apos;ll contact you within 2 hours to discuss your project
                   </p>
                 </form>
               </div>

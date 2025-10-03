@@ -64,10 +64,10 @@ const handleSubmit = async (e: React.FormEvent) => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Let's <span className="text-cyan-400">Work Together</span>
+            Let&apos;s <span className="text-cyan-400">Work Together</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to take your digital presence to the next level? Let's discuss your project!
+            Ready to take your digital presence to the next level? Let&apos;s discuss your project!
           </p>
         </div>
 
