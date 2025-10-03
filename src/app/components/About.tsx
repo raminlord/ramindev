@@ -43,7 +43,7 @@ export default function About() {
                 Crafting Digital Excellence
               </h3>
               <p className="text-gray-300 mb-4 text-lg">
-                I'm a full-stack developer specializing in modern web technologies. 
+                I&apos;m a full-stack developer specializing in modern web technologies. 
                 My journey began 3+ years ago, and since then I&apos;ve helped numerous 
                 businesses establish their online presence with cutting-edge solutions.
               </p>
