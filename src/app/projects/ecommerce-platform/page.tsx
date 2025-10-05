@@ -1,84 +1,257 @@
-import { ArrowLeft, ExternalLink, Github, Calendar, Users } from 'lucide-react';
-import Link from 'next/link';
+'use client';
 
-export default function EcommerceProject() {
+import { useState, useEffect } from 'react';
+import Header from './components/Header';
+import FilterSidebar from './components/FilterSidebar';
+import ProductGrid from './components/ProductGrid';
+import Cart from './components/Cart';
+import SearchBar from './components/SearchBar';
+import Checkout from './components/Checkout';
+import { Product, CartItem } from './types';
+
+// داده‌های نمونه محصولات
+const sampleProducts: Product[] = [
+  {
+    id: 1,
+    name: 'iPhone 14 Pro',
+    price: 999,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&h=500&fit=crop',
+    description: 'Latest iPhone with advanced camera system',
+    rating: 4.8,
+    inStock: true
+  },
+  {
+    id: 2,
+    name: 'MacBook Air M2',
+    price: 1199,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500&h=500&fit=crop',
+    description: 'Powerful and lightweight laptop',
+    rating: 4.7,
+    inStock: true
+  },
+  {
+    id: 3,
+    name: 'Nike Air Max',
+    price: 120,
+    category: 'fashion',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop',
+    description: 'Comfortable running shoes',
+    rating: 4.5,
+    inStock: true
+  },
+  {
+    id: 4,
+    name: 'Sony Headphones',
+    price: 299,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop',
+    description: 'Noise cancelling wireless headphones',
+    rating: 4.6,
+    inStock: false
+  },
+  {
+    id: 5,
+    name: 'Designer Watch',
+    price: 450,
+    category: 'fashion',
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop',
+    description: 'Luxury automatic watch',
+    rating: 4.9,
+    inStock: true
+  },
+  {
+    id: 6,
+    name: 'Gaming Keyboard',
+    price: 150,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=500&h=500&fit=crop',
+    description: 'Mechanical RGB gaming keyboard',
+    rating: 4.4,
+    inStock: true
+  },
+  {
+    id: 7,
+    name: 'Summer Dress',
+    price: 65,
+    category: 'fashion',
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop',
+    description: 'Elegant summer floral dress',
+    rating: 4.3,
+    inStock: true
+  },
+  {
+    id: 8,
+    name: 'Smart Watch',
+    price: 350,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1579586337278-3f436c8e939d?w=500&h=500&fit=crop',
+    description: 'Fitness and health tracking smartwatch',
+    rating: 4.5,
+    inStock: true
+  },
+  {
+    id: 9,
+    name: 'Leather Jacket',
+    price: 280,
+    category: 'fashion',
+    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=500&fit=crop',
+    description: 'Genuine leather biker jacket',
+    rating: 4.7,
+    inStock: true
+  },
+  {
+    id: 10,
+    name: 'Camera Lens',
+    price: 800,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=500&fit=crop',
+    description: 'Professional photography lens',
+    rating: 4.8,
+    inStock: true
+  },
+  {
+    id: 11,
+    name: 'Sunglasses',
+    price: 180,
+    category: 'fashion',
+    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop',
+    description: 'Polarized UV protection sunglasses',
+    rating: 4.4,
+    inStock: true
+  },
+  {
+    id: 12,
+    name: 'Wireless Earbuds',
+    price: 199,
+    category: 'electronics',
+    image: 'https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?w=500&h=500&fit=crop',
+    description: 'True wireless stereo earbuds',
+    rating: 4.6,
+    inStock: true
+  }
+];
+
+export default function ECommercePlatform() {
+  const [products] = useState<Product[]>(sampleProducts);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(sampleProducts);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // فیلتر کردن محصولات بر اساس دسته‌بندی و جستجو
+  useEffect(() => {
+    let filtered = products;
+
+    if (selectedCategories.length > 0) {
+      filtered = filtered.filter(product => 
+        selectedCategories.includes(product.category)
+      );
+    }
+
+    if (searchQuery) {
+      filtered = filtered.filter(product =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    setFilteredProducts(filtered);
+  }, [selectedCategories, searchQuery, products]);
+
+  const addToCart = (product: Product) => {
+    setCart(prevCart => {
+      const existingItem = prevCart.find(item => item.id === product.id);
+      if (existingItem) {
+        return prevCart.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+
+  const removeFromCart = (productId: number) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+  };
+
+  const updateQuantity = (productId: number, quantity: number) => {
+    if (quantity < 1) {
+      removeFromCart(productId);
+      return;
+    }
+    setCart(prevCart =>
+      prevCart.map(item =>
+        item.id === productId ? { ...item, quantity } : item
+      )
+    );
+  };
+
+  const getTotalItems = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const handleCheckout = () => {
+    setIsCartOpen(false);
+    setIsCheckoutOpen(true);
+  };
+
+  const handleOrderComplete = () => {
+    setCart([]); // خالی کردن سبد خرید پس از تکمیل سفارش
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-      <header className="border-b border-slate-700">
-        <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition duration-300">
-            <ArrowLeft className="w-5 h-5" />
-            Back to Portfolio
-          </Link>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-6 py-12">
-        <div className="max-w-4xl mx-auto">
-          
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              E-Commerce Platform
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Full-stack e-commerce solution with advanced features and seamless user experience
-            </p>
+    <div className="min-h-screen bg-gray-50">
+      <Header cartItemsCount={getTotalItems()} onCartClick={() => setIsCartOpen(true)} />
+      
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar */}
+          <div className="lg:w-1/4">
+            <FilterSidebar
+              selectedCategories={selectedCategories}
+              onCategoryChange={setSelectedCategories}
+            />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content */}
+          <div className="lg:w-3/4">
+            <SearchBar
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              resultsCount={filteredProducts.length}
+            />
             
-            <div className="lg:col-span-2">
-              <div className="bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-slate-700 h-96 flex items-center justify-center">
-                <div className="text-center text-slate-400">
-                  <div className="text-4xl mb-4">🛒</div>
-                  <div>E-Commerce Platform Preview</div>
-                  <div className="text-sm mt-2">Online store & dashboard</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-bold text-white mb-4">Project Details</h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-cyan-400" />
-                    <span className="text-gray-300">Completed: Nov 2024</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Users className="w-5 h-5 text-cyan-400" />
-                    <span className="text-gray-300">Client: Retail Business</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <a href="#" className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
-                  <ExternalLink className="w-5 h-5" />
-                  Live Demo
-                </a>
-                <a href="#" className="w-full border border-slate-600 hover:border-cyan-400 text-gray-300 hover:text-cyan-400 font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
-                  <Github className="w-5 h-5" />
-                  Source Code
-                </a>
-              </div>
-            </div>
-
+            <ProductGrid
+              products={filteredProducts}
+              onAddToCart={addToCart}
+            />
           </div>
-
-          <div className="mt-12 bg-slate-800/30 rounded-2xl p-8 border border-slate-700">
-            <h2 className="text-2xl font-bold text-white mb-6">About This Project</h2>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              A complete e-commerce platform featuring product management, shopping cart, 
-              payment integration, and admin dashboard. Built with modern technologies 
-              for scalability and optimal performance.
-            </p>
-          </div>
-
         </div>
-      </main>
+      </div>
+
+      {/* Cart Sidebar */}
+      <Cart
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cart}
+        onUpdateQuantity={updateQuantity}
+        onRemoveItem={removeFromCart}
+        onCheckout={handleCheckout}
+      />
+
+      {/* Checkout Modal */}
+      <Checkout
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        cartItems={cart}
+        onOrderComplete={handleOrderComplete}
+      />
     </div>
   );
 }
