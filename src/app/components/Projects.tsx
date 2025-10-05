@@ -8,7 +8,7 @@ const projects = [
     description: "A full-stack e-commerce solution with dashboard, payment integration, and inventory management.",
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-    liveUrl: "#",
+    liveUrl: "/projects/ecommerce-platform",
     githubUrl: "#",
     category: "Full Stack",
     results: ["+45% Conversion Rate", "+60% Mobile Sales"]
@@ -18,7 +18,7 @@ const projects = [
     description: "Analytics dashboard for B2B SaaS company with real-time data visualization and reporting.",
     image: "/api/placeholder/600/400",
     technologies: ["React", "D3.js", "Node.js", "MongoDB"],
-    liveUrl: "#",
+    liveUrl: "/projects/saas-dashboard",
     githubUrl: "#",
     category: "Web App",
     results: ["-30% User Churn", "+50% Engagement"]
@@ -28,7 +28,7 @@ const projects = [
     description: "Modern portfolio website for creative agency with smooth animations and optimized performance.",
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
-    liveUrl: "#",
+    liveUrl: "/projects/portfolio-website",
     githubUrl: "#",
     category: "Website",
     results: ["90+ Lighthouse Score", "2s Load Time"]
