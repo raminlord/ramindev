@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { CartItem } from '../types';
 
 interface CartProps {
@@ -9,7 +10,7 @@ interface CartProps {
   cartItems: CartItem[];
   onUpdateQuantity: (productId: number, quantity: number) => void;
   onRemoveItem: (productId: number) => void;
-  onCheckout: () => void; // اضافه شد
+  onCheckout: () => void;
 }
 
 export default function Cart({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCheckout }: CartProps) {
@@ -68,9 +69,11 @@ export default function Cart({ isOpen, onClose, cartItems, onUpdateQuantity, onR
                       exit={{ opacity: 0, scale: 0.9 }}
                       className="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg"
                     >
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.name}
+                        width={64}
+                        height={64}
                         className="w-16 h-16 object-cover rounded"
                       />
                       <div className="flex-1">

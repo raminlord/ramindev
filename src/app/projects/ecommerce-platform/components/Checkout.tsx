@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 import { CartItem, ShippingAddress, PaymentMethod } from '../types';
 
 interface CheckoutProps {
@@ -364,6 +365,10 @@ function PaymentForm({
   onSubmit: (e: React.FormEvent) => void;
   onBack: () => void;
 }) {
+  const handlePaymentTypeChange = (type: 'credit-card' | 'paypal' | 'bank-transfer') => {
+    onChange({ ...method, type });
+  };
+
   return (
     <form onSubmit={onSubmit} className="space-y-6">
       <h3 className="text-xl font-semibold text-gray-800 mb-4">Payment Method</h3>
@@ -380,7 +385,7 @@ function PaymentForm({
               name="payment-method"
               value={payment.id}
               checked={method.type === payment.id}
-              onChange={() => onChange({ ...method, type: payment.id as any })}
+              onChange={() => handlePaymentTypeChange(payment.id as 'credit-card' | 'paypal' | 'bank-transfer')}
               className="w-4 h-4 text-blue-600 focus:ring-blue-500"
             />
             <span className="text-lg">{payment.icon}</span>
@@ -482,7 +487,13 @@ function ReviewStep({
         {cartItems.map((item) => (
           <div key={item.id} className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded" />
+              <Image
+                src={item.image}
+                alt={item.name}
+                width={48}
+                height={48}
+                className="w-12 h-12 object-cover rounded"
+              />
               <div>
                 <div className="font-medium text-gray-800">{item.name}</div>
                 <div className="text-sm text-gray-500">Qty: {item.quantity}</div>
@@ -560,7 +571,7 @@ function ReviewStep({
 }
 
 // Helper functions
-const stepLabels = {
+const stepLabels: Record<CheckoutStep, string> = {
   shipping: 'Shipping',
   payment: 'Payment',
   review: 'Review',

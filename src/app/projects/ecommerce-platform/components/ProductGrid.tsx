@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Product } from '../types';
 
 interface ProductGridProps {
@@ -38,9 +39,11 @@ export default function ProductGrid({ products, onAddToCart }: ProductGridProps)
         >
           {/* Product Image */}
           <div className="relative overflow-hidden">
-            <img
+            <Image
               src={product.image}
               alt={product.name}
+              width={500}
+              height={500}
               className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
             />
             {!product.inStock && (
