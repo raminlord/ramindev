@@ -1,10 +1,10 @@
 'use client';
 
-import Navbar from './components/Navbar';
-import Services from './components/Services';
-import Projects from './components/Projects';
-import About from './components/About';
-import Contact from './components/Contact';
+import Navbar from './components/navbar';
+import Services from './components/services';
+import Projects from './components/projects';
+import About from './components/about';
+import Contact from './components/contact';
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
