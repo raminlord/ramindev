@@ -4,34 +4,37 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with dashboard, payment integration, and inventory management.",
+    title: "E-Commerce Platform for Fashion Brand",
+    before: "High cart abandonment, slow mobile experience",
+    built: "Full-stack store with Stripe, real-time inventory, and mobile-optimized checkout",
+    results: ["+45% conversions", "-20% cart abandonment", "30% faster load"],
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
     liveUrl: "/projects/ecommerce-platform",
     githubUrl: "#",
-    category: "Full Stack",
-    results: ["+45% Conversion Rate", "+60% Mobile Sales"]
+    category: "Full Stack"
   },
   {
-    title: "SaaS Dashboard",
-    description: "Analytics dashboard for B2B SaaS company with real-time data visualization and reporting.",
+    title: "SaaS Dashboard for HR Tech Startup",
+    before: "Teams couldn’t act on data fast enough",
+    built: "Real-time analytics dashboard with role-based views and exportable reports",
+    results: ["-30% churn", "+25% feature adoption", "50% faster data processing"],
     image: "/api/placeholder/600/400",
     technologies: ["React", "D3.js", "Node.js", "MongoDB"],
     liveUrl: "/projects/saas-dashboard",
     githubUrl: "#",
-    category: "Web App",
-    results: ["-30% User Churn", "+50% Engagement"]
+    category: "Web App"
   },
   {
-    title: "Portfolio Website",
-    description: "Modern portfolio website for creative agency with smooth animations and optimized performance.",
+    title: "Portfolio for Design Studio",
+    before: "Site took 5s to load — clients left before seeing work",
+    built: "Ultra-fast portfolio with scroll-triggered animations and minimal JS",
+    results: ["90+ Lighthouse score", "2s load", "+40% contact submissions"],
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
     liveUrl: "/projects/portfolio-website",
     githubUrl: "#",
-    category: "Website",
-    results: ["90+ Lighthouse Score", "2s Load Time"]
+    category: "Website"
   }
 ];
 
@@ -81,14 +84,20 @@ export default function Projects() {
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   {project.title}
                 </h3>
-                
-                <p className="text-gray-300 mb-6 text-lg">
-                  {project.description}
+
+                {/* Before */}
+                <p className="text-gray-300 mb-2">
+                  <strong>Before:</strong> {project.before}
+                </p>
+
+                {/* Built */}
+                <p className="text-gray-300 mb-6">
+                  <strong>Built:</strong> {project.built}
                 </p>
 
                 {/* Results */}
                 <div className="mb-6">
-                  <h4 className="text-white font-semibold mb-3">Key Results:</h4>
+                  <h4 className="text-white font-semibold mb-3">Result:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.results.map((result, i) => (
                       <span 
