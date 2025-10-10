@@ -6,6 +6,7 @@ import Projects from './components/projects';
 import About from './components/about';
 import Contact from './components/contact';
 import Trust from './components/trust';
+
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
