@@ -26,7 +26,7 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            About <span className="text-cyan-400">Me</span>
+            Why <span className="text-cyan-400">Me?</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Passionate developer focused on creating digital solutions that drive real business results

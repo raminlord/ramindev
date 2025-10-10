@@ -24,12 +24,12 @@ export default function Home() {
       <main className="pt-20">
         <section id="home" className="container mx-auto px-6 py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            I Build
-            <span className="text-cyan-400 block mt-2">Digital Experiences</span>
+           I Turn
+            <span className="text-cyan-400 block mt-2">  Visitors Into Paying Clients</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Specialized in creating fast, modern, and user-friendly websites for international businesses
-          </p>
+            Fast, secure, and conversion-focused sites for ambitious businesses.       
+              </p>
           <div className="space-x-4">
             <button 
               onClick={() => scrollToSection('projects')}
@@ -41,7 +41,7 @@ export default function Home() {
               onClick={() => scrollToSection('contact')}
               className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300"
             >
-              Contact Me
+              Get Free Audit →
             </button>
           </div>
         </section>

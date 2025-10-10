@@ -7,42 +7,42 @@ const services = [
   {
     icon: <Code className="w-8 h-8" />,
     title: "Custom Web Development",
-    description: "Full-stack web applications built with modern technologies like Next.js, React, and TypeScript.",
+    description: "High-converting web apps for SaaS & startups — built with Next.js, React, and TypeScript.Result: 30%+ more signups from day one. ",
     features: ["Responsive Design", "SEO Optimized", "Fast Performance"],
     price: "$5,000+"
   },
   {
     icon: <Palette className="w-8 h-8" />,
     title: "UI/UX Design",
-    description: "User-centered designs that convert visitors into customers and drive business growth.",
+    description: "UI/UX that guides users to click “Buy” — not just “Browse”.Result: 40% lower bounce rate on launch",
     features: ["User Research", "Wireframing", "Prototyping"],
     price: "$3,000+"
   },
   {
     icon: <Smartphone className="w-8 h-8" />,
     title: "Mobile-First Development",
-    description: "Websites that look and perform perfectly on all devices, with mobile users as priority.",
+    description: "Mobile experiences that load instantly and convert on the go.Result: 50% more mobile revenue in 30 days. ",
     features: ["PWA Ready", "Touch Optimized", "Cross-Browser"],
     price: "$4,500+"
   },
   {
     icon: <Zap className="w-8 h-8" />,
     title: "Performance Optimization",
-    description: "Lightning-fast websites that load in under 2 seconds and score 90+ on Lighthouse.",
+    description: "Make your site faster than 95% of competitors.Result: Loads in <1.5s — 90+ Lighthouse score guaranteed.",
     features: ["Core Web Vitals", "Image Optimization", "Code Splitting"],
     price: "$2,500+"
   },
   {
     icon: <Search className="w-8 h-8" />,
     title: "SEO & Analytics",
-    description: "Data-driven strategies to improve your search rankings and track user behavior.",
+    description: "Get found by buyers — not just browsers.Result: 70% more organic traffic in 60 days.",
     features: ["Technical SEO", "Google Analytics", "Conversion Tracking"],
     price: "$1,800+"
   },
   {
     icon: <Shield className="w-8 h-8" />,
     title: "Maintenance & Support",
-    description: "Ongoing support to keep your website secure, updated, and performing at its best.",
+    description:"Sleep while I keep your site secure, fast, and online.Result: Zero downtime. Unlimited fixes. 24/7 monitoring. ",
     features: ["Security Updates", "Backup Solutions", "24/7 Monitoring"],
     price: "$500/month"
   }
@@ -105,16 +105,16 @@ export default function Services() {
         {/* CTA Section */}
         <div className="text-center mt-16 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-8 border border-cyan-400/20">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Ready to Transform Your Online Presence?
+           Ready to Turn Clicks Into Cash?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Let&apos;s discuss how I can help you achieve your business goals with a custom web solution.
+          Let’s build a site that converts visitors — not just impresses them.
           </p>
           <Link 
             href="/start-project"
             className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block"
           >
-            Start Your Project
+           Start Now →
           </Link>
         </div>
       </div>

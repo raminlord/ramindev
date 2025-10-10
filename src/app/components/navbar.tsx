@@ -22,16 +22,16 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="text-2xl font-bold text-white cursor-pointer" onClick={() => scrollToSection('home')}>
-            YourName
+            RaminDEV
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="  hidden md:flex space-x-8">
             <button onClick={() => scrollToSection('home')} className="text-white hover:text-cyan-400 transition duration-300">Home</button>
             <button onClick={() => scrollToSection('services')} className="text-white hover:text-cyan-400 transition duration-300">Services</button>
             <button onClick={() => scrollToSection('projects')} className="text-white hover:text-cyan-400 transition duration-300">Projects</button>
             <button onClick={() => scrollToSection('about')} className="text-white hover:text-cyan-400 transition duration-300">About</button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-cyan-400 transition duration-300">Contact</button>
+            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-cyan-400 transition duration-300">Get Audit</button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -50,7 +50,7 @@ export default function Navbar() {
             <button onClick={() => scrollToSection('services')} className="block text-white hover:text-cyan-400 transition duration-300 w-full text-left">Services</button>
             <button onClick={() => scrollToSection('projects')} className="block text-white hover:text-cyan-400 transition duration-300 w-full text-left">Projects</button>
             <button onClick={() => scrollToSection('about')} className="block text-white hover:text-cyan-400 transition duration-300 w-full text-left">About</button>
-            <button onClick={() => scrollToSection('contact')} className="block text-white hover:text-cyan-400 transition duration-300 w-full text-left">Contact</button>
+            <button onClick={() => scrollToSection('contact')} className="block text-white hover:text-cyan-400 transition duration-300 w-full text-left">Get Audit</button>
           </div>
         )}
       </div>
