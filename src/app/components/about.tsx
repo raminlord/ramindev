@@ -3,10 +3,10 @@
 import { CheckCircle, Award, Users, Clock } from 'lucide-react';
 
 const stats = [
-  { icon: <Award className="w-6 h-6" />, number: "15+", label: "Projects Completed" },
-  { icon: <Users className="w-6 h-6" />, number: "12+", label: "Happy Clients" },
-  { icon: <Clock className="w-6 h-6" />, number: "3+", label: "Years Experience" },
-  { icon: <CheckCircle className="w-6 h-6" />, number: "100%", label: "Client Satisfaction" }
+  { icon: <Award className="w-6 h-6" />, number: "8+", label: "Projects Delivered" },
+  { icon: <Users className="w-6 h-6" />, number: "7+", label: "Satisfied Clients" },
+  { icon: <Clock className="w-6 h-6" />, number: "3+", label: "Years Building Web Solutions" },
+  { icon: <CheckCircle className="w-6 h-6" />, number: "100%", label: "On-Time Delivery" }
 ];
 
 const skills = [
@@ -26,10 +26,10 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Why <span className="text-cyan-400">Me?</span>
+            Why <span className="text-cyan-400">Work With Me?</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Passionate developer focused on creating digital solutions that drive real business results
+            Strategic developer focused on creating digital solutions that drive real business results
           </p>
         </div>
 
@@ -43,18 +43,13 @@ export default function About() {
                 Crafting Digital Excellence
               </h3>
               <p className="text-gray-300 mb-4 text-lg">
-                I&apos;m a full-stack developer specializing in modern web technologies. 
-                My journey began 3+ years ago, and since then I&apos;ve helped numerous 
-                businesses establish their online presence with cutting-edge solutions.
+                I&apos;m a full-stack developer specializing in modern web technologies like Next.js, React, and TypeScript. 
+                Over the past 3+ years, I&apos;ve helped startups and growing businesses build fast, secure, and conversion-focused websites.
               </p>
               <p className="text-gray-300 mb-4 text-lg">
-                I believe in <span className="text-cyan-400">code that matters</span> - 
+                I believe in <span className="text-cyan-400">code that matters</span> — 
                 every line should serve a purpose, whether it&apos;s improving user experience, 
                 boosting performance, or driving conversions.
-              </p>
-              <p className="text-gray-300 text-lg">
-                When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
-                contributing to open-source projects, or optimizing web performance.
               </p>
             </div>
 
