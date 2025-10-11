@@ -11,7 +11,7 @@ const projects = [
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
     liveUrl: "/projects/ecommerce-platform",
-    githubUrl: "#",
+    githubUrl: "https://github.com/raminlord/ramindev/tree/master/src/app/projects/ecommerce-platform",
     category: "Full Stack"
   },
   {

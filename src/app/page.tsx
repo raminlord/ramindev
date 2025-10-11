@@ -42,7 +42,7 @@ export default function Home() {
               onClick={() => scrollToSection('contact')}
               className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300"
             >
-              Get Free Audit →
+              Get Free Audit
             </button>
           </div>
         </section>
