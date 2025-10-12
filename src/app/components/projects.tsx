@@ -33,7 +33,7 @@ const projects = [
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
     liveUrl: "/projects/design-studio-portfolio",
-    githubUrl: "#",
+    githubUrl: "https://github.com/raminlord/ramindev/tree/master/src/app/projects/design-studio-portfolio",
     category: "Website"
   }
 ];
@@ -148,15 +148,7 @@ export default function Projects() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-20">
-          <p className="text-gray-300 mb-6 text-xl">
-            Interested in working together?
-          </p>
-          <button className="group bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-bold py-4 px-8 rounded-lg transition duration-300 inline-flex items-center gap-2">
-            View All Projects
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-        </div>
+       
 
       </div>
     </section>

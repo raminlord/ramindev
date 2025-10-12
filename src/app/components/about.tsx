@@ -67,9 +67,7 @@ export default function About() {
             </div>
 
             {/* CTA Button */}
-            <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-              Download Resume
-            </button>
+            
           </div>
 
           {/* Right Column - Skills */}
