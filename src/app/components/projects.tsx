@@ -22,7 +22,7 @@ const projects = [
     image: "/api/placeholder/600/400",
     technologies: ["React", "D3.js", "Node.js", "MongoDB"],
     liveUrl: "/projects/saas-dashboard",
-    githubUrl: "#",
+    githubUrl: "https://github.com/raminlord/ramindev/tree/master/src/app/projects/saas-dashboard",
     category: "Web App"
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     results: ["90+ Lighthouse score", "2s load", "+40% contact submissions"],
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
-    liveUrl: "/projects/portfolio-website",
+    liveUrl: "/projects/design-studio-portfolio",
     githubUrl: "#",
     category: "Website"
   }
