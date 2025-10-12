@@ -143,7 +143,7 @@ export default function ContactForm() {
             </motion.button>
             
             <p className="text-center text-gray-500 text-sm">
-              We'll get back to you within 24 hours. No spam, ever.
+              We will get back to you within 24 hours. No spam, ever.
             </p>
           </form>
         </motion.div>

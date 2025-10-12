@@ -90,7 +90,7 @@ export default function PerformancePage() {
               Ready to Boost Your Performance?
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Let's transform your digital presence with our proven optimization strategies.
+              Let us transform your digital presence with our proven optimization strategies.
             </p>
             <Link 
               href="/projects/design-studio-portfolio#contact"
