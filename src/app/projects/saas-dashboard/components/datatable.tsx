@@ -19,7 +19,8 @@ export default function DataTable() {
       let aValue = a[sortField];
       let bValue = b[sortField];
 
-      if (typeof aValue === 'string') {
+      // فقط برای فیلدهای string از toLowerCase استفاده کن
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
         aValue = aValue.toLowerCase();
         bValue = bValue.toLowerCase();
       }

@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'; // ✅ اضافه کردن useState و useEffect
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDashboard } from '../context/dashboardcontext';
-
 export default function RealTimeUpdates() {
   const { state, dispatch } = useDashboard();
   const [notifications, setNotifications] = useState<{ id: number; message: string; type: 'info' | 'success' | 'warning' }[]>([]);
