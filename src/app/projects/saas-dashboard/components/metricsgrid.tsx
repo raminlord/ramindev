@@ -6,7 +6,18 @@ import { useDashboard } from '../context/dashboardcontext';
 
 export default function MetricsGrid() {
   const { state } = useDashboard();
-  const { metrics } = state;
+
+  // ✅ مقادیر پیش‌فرض برای جلوگیری از خطا
+  const defaultMetrics = {
+    totalEmployees: 0,
+    activeHires: 0,
+    turnoverRate: 0,
+    avgTimeToFill: 0,
+    avgPerformance: 0,
+    avgSatisfaction: 0,
+  };
+
+  const { metrics = defaultMetrics } = state;
 
   const metricCards = [
     {
@@ -29,7 +40,7 @@ export default function MetricsGrid() {
     },
     {
       title: 'Turnover Rate',
-      value: `${metrics.turnoverRate.toFixed(1)}%`,
+      value: `${(metrics.turnoverRate ?? 0).toFixed(1)}%`,
       change: '-2%',
       trend: 'down',
       icon: '🔄',
@@ -47,7 +58,7 @@ export default function MetricsGrid() {
     },
     {
       title: 'Avg Performance',
-      value: `${metrics.avgPerformance}%`,
+      value: `${(metrics.avgPerformance ?? 0).toFixed(1)}%`,
       change: '+3%',
       trend: 'up',
       icon: '⭐',
@@ -56,7 +67,7 @@ export default function MetricsGrid() {
     },
     {
       title: 'Avg Satisfaction',
-      value: `${metrics.avgSatisfaction}%`,
+      value: `${(metrics.avgSatisfaction ?? 0).toFixed(1)}%`,
       change: '+2%',
       trend: 'up',
       icon: '😊',
