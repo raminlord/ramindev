@@ -1,24 +1,28 @@
-import HeroSection from './components/hero-section';
-import WorkShowcase from './components/work-showcase';
-import PerformanceMetrics from './components/performance-metrics';
-import ContactForm from './components/contact-form';
-import SmoothScrolling from './components/smooth-scrolling';
-import { Metadata } from 'next';
+// test10/src/app/projects/design-studio-portfolio/page.tsx
+import { Suspense } from 'react';
+import HeroSection from './components/herosection';
+import WorkShowcase from './components/workshowcase';
+import PerformanceMetrics from './components/performancemetrics';
+import ContactForm from './components/contactform';
+import SmoothScrolling from './components/smoothscrolling';
+import LazyLoading from './components/lazyloading';
 
-export const metadata: Metadata = {
-  title: 'Design Studio Portfolio | Ultra-Fast Showcase',
-  description: 'A high-performance portfolio for a modern design studio. Load time: under 2s. Lighthouse score: 90+.',
+export const metadata = {
+  title: 'Design Studio Portfolio | Ultra-Fast Performance',
+  description: 'A high-performance design studio portfolio with 90+ Lighthouse score and 2s load time',
 };
 
 export default function DesignStudioPortfolio() {
   return (
     <SmoothScrolling>
-      <main className="min-h-screen bg-white text-gray-900 font-sans">
-        <HeroSection />
-        <WorkShowcase />
-        <PerformanceMetrics />
-        <ContactForm />
-      </main>
+      <div className="min-h-screen bg-white">
+        <Suspense fallback={<LazyLoading />}>
+          <HeroSection />
+          <WorkShowcase />
+          <PerformanceMetrics />
+          <ContactForm />
+        </Suspense>
+      </div>
     </SmoothScrolling>
   );
 }
