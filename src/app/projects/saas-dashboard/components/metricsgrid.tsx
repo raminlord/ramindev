@@ -16,6 +16,7 @@ export default function MetricsGrid() {
       trend: 'up',
       icon: '👥',
       color: 'blue',
+      bgColor: 'bg-blue-100',
     },
     {
       title: 'Active Hires',
@@ -24,6 +25,7 @@ export default function MetricsGrid() {
       trend: 'up',
       icon: '📈',
       color: 'green',
+      bgColor: 'bg-green-100',
     },
     {
       title: 'Turnover Rate',
@@ -32,6 +34,7 @@ export default function MetricsGrid() {
       trend: 'down',
       icon: '🔄',
       color: 'orange',
+      bgColor: 'bg-orange-100',
     },
     {
       title: 'Avg Time to Fill',
@@ -40,6 +43,7 @@ export default function MetricsGrid() {
       trend: 'down',
       icon: '⏱️',
       color: 'purple',
+      bgColor: 'bg-purple-100',
     },
     {
       title: 'Avg Performance',
@@ -48,6 +52,7 @@ export default function MetricsGrid() {
       trend: 'up',
       icon: '⭐',
       color: 'yellow',
+      bgColor: 'bg-yellow-100',
     },
     {
       title: 'Avg Satisfaction',
@@ -56,6 +61,7 @@ export default function MetricsGrid() {
       trend: 'up',
       icon: '😊',
       color: 'pink',
+      bgColor: 'bg-pink-100',
     },
   ];
 
@@ -88,14 +94,14 @@ export default function MetricsGrid() {
       initial="hidden"
       animate="visible"
     >
-      {metricCards.map((metric, index) => (
+      {metricCards.map((metric) => (
         <motion.div
           key={metric.title}
           variants={itemVariants}
           className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className={`text-2xl bg-${metric.color}-100 p-2 rounded-lg`}>
+            <div className={`text-2xl ${metric.bgColor} p-2 rounded-lg`}>
               {metric.icon}
             </div>
             <div className={`text-sm font-medium ${
