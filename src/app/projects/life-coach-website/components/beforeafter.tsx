@@ -59,7 +59,7 @@ export default function BeforeAfter() {
                   </div>
                   <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                     <h4 className="font-semibold text-red-800 mb-2">❌ No Clear CTA</h4>
-                    <p className="text-red-700">Visitors didn't know what to do next</p>
+                    <p className="text-red-700">Visitors didnot know what to do next</p>
                   </div>
                   <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                     <h4 className="font-semibold text-red-800 mb-2">❌ Slow Loading</h4>
@@ -67,12 +67,12 @@ export default function BeforeAfter() {
                   </div>
                   <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                     <h4 className="font-semibold text-red-800 mb-2">❌ Generic Content</h4>
-                    <p className="text-red-700">Didn't speak to specific client needs</p>
+                    <p className="text-red-700">Did not speak to specific client needs</p>
                   </div>
                 </div>
                 
                 <div className="bg-gray-800 text-white p-6 rounded-lg text-center">
-                  <p className="text-lg">"My website looked dated and wasn't converting any clients"</p>
+                  <p className="text-lg">"My website looked dated and was not converting any clients"</p>
                 </div>
               </motion.div>
             )}

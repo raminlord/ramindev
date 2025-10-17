@@ -21,9 +21,9 @@ export default function CTASection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl md:text-2xl mb-8 opacity-90"
         >
-          Stop leaving money on the table with a website that doesn't convert.
+          Stop leaving money on the table with a website that does not convert.
           <br />
-          Let's build you a client-attraction machine.
+          Let&aposs build you a client-attraction machine.
         </motion.p>
 
         <motion.div
@@ -52,7 +52,7 @@ export default function CTASection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
         >
-          <h4 className="font-semibold text-lg mb-4">What's Included in Your Free Call:</h4>
+          <h4 className="font-semibold text-lg mb-4">What is Included in Your Free Call:</h4>
           <div className="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
             <div className="flex items-center gap-3">
               <span className="text-green-400">✓</span>

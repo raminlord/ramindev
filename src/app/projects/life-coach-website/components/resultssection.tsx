@@ -41,7 +41,7 @@ export default function ResultsSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-center mb-12 opacity-90 max-w-2xl mx-auto"
         >
-          Emma's new website started delivering results immediately after launch
+          Emma is new website started delivering results immediately after launch
         </motion.p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
