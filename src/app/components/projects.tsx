@@ -171,7 +171,7 @@ export default function Projects() {
               Ready to Transform Your Digital Presence?
             </h3>
             <p className="text-gray-300 mb-6">
-              Let's build something amazing together. I specialize in creating high-converting, 
+              Let&quots build something amazing together. I specialize in creating high-converting, 
               performance-optimized web solutions that drive real business results.
             </p>
             <a 
