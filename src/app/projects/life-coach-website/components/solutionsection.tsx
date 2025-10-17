@@ -49,7 +49,7 @@ export default function SolutionSection() {
             The Solution: A Client-Attraction Machine
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We transformed Emma's outdated website into a conversion-optimized platform that speaks directly to her ideal clients
+            We transformed Emma &quots outdated website into a conversion-optimized platform that speaks directly to her ideal clients
           </p>
         </motion.div>
 

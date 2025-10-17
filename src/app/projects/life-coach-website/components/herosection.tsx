@@ -56,8 +56,8 @@ export default function HeroSection() {
         >
           <div className="bg-white rounded-2xl shadow-xl p-6 max-w-2xl mx-auto border border-gray-100">
             <p className="text-gray-600 italic text-lg">
-              "This website finally feels like me and attracts exactly the kind of clients I want to work with. 
-              In just 3 weeks, I booked 7 paid sessions!"
+               &quot This website finally feels like me and attracts exactly the kind of clients I want to work with. 
+              In just 3 weeks, I booked 7 paid sessions!  &quot
             </p>
             <p className="mt-4 font-semibold text-gray-900">— Emma Clark, Life Coach</p>
           </div>

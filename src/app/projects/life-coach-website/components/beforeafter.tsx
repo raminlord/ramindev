@@ -72,7 +72,7 @@ export default function BeforeAfter() {
                 </div>
                 
                 <div className="bg-gray-800 text-white p-6 rounded-lg text-center">
-                  <p className="text-lg">"My website looked dated and was not converting any clients"</p>
+                  <p className="text-lg"> &quot My website looked dated and was not converting any clients &quot</p>
                 </div>
               </motion.div>
             )}
@@ -104,7 +104,7 @@ export default function BeforeAfter() {
                 </div>
                 
                 <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-lg text-center">
-                  <p className="text-lg">"Now my website feels like me and converts visitors into paying clients"</p>
+                  <p className="text-lg"> &quot Now my website feels like me and converts visitors into paying clients  &quot </p>
                 </div>
               </motion.div>
             )}

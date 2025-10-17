@@ -15,9 +15,9 @@ export default function Testimonial() {
           <div className="text-6xl mb-6 text-center">💫</div>
           
           <blockquote className="text-2xl md:text-3xl font-light text-gray-800 text-center leading-relaxed mb-8">
-            "This website finally feels like me and attracts exactly the kind of clients I want to work with. 
+             &quot This website finally feels like me and attracts exactly the kind of clients I want to work with. 
             The transformation in my business has been incredible - I went from zero paying clients to fully 
-            booking my coaching program in just 3 weeks!"
+            booking my coaching program in just 3 weeks! &quot
           </blockquote>
           
           <div className="text-center">
