@@ -4,6 +4,17 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 const projects = [
   {
+    title: "Life Coach Website - Client Attraction Machine",
+    before: "Outdated website with zero conversions, not mobile-friendly, attracting wrong clients",
+    built: "Conversion-focused website with booking system, mobile-first design, and client-attracting messaging",
+    results: ["12 new inquiries", "7 paid sessions", "291% ROI in 3 weeks", "Fully booked coaching program"],
+    image: "/api/placeholder/600/400",
+    technologies: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "/projects/life-coach-website",
+    githubUrl: "https://github.com/raminlord/ramindev/tree/master/src/app/projects/life-coach-website",
+    category: "Conversion Optimization"
+  },
+  {
     title: "E-Commerce Platform for Fashion Brand",
     before: "High cart abandonment, slow mobile experience",
     built: "Full-stack store with Stripe, real-time inventory, and mobile-optimized checkout",
@@ -16,7 +27,7 @@ const projects = [
   },
   {
     title: "SaaS Dashboard for HR Tech Startup",
-    before: "Teams couldn’t act on data fast enough",
+    before: "Teams couldn't act on data fast enough",
     built: "Real-time analytics dashboard with role-based views and exportable reports",
     results: ["-30% churn", "+25% feature adoption", "50% faster data processing"],
     image: "/api/placeholder/600/400",
@@ -66,7 +77,9 @@ export default function Projects() {
                 <div className="relative overflow-hidden rounded-2xl border-2 border-slate-700 hover:border-cyan-400 transition-all duration-500">
                   <div className="w-full h-80 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
                     <div className="text-center text-slate-400">
-                      <div className="text-2xl mb-2">🚀</div>
+                      <div className="text-2xl mb-2">
+                        {index === 0 ? "💫" : "🚀"}
+                      </div>
                       <div>Project Preview</div>
                       <div className="text-sm mt-2">{project.title}</div>
                     </div>
@@ -102,7 +115,11 @@ export default function Projects() {
                     {project.results.map((result, i) => (
                       <span 
                         key={i}
-                        className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30"
+                        className={`px-3 py-1 rounded-full text-sm border ${
+                          index === 0 
+                            ? 'bg-purple-500/20 text-purple-400 border-purple-500/30'
+                            : 'bg-green-500/20 text-green-400 border-green-500/30'
+                        }`}
                       >
                         {result}
                       </span>
@@ -148,7 +165,24 @@ export default function Projects() {
         </div>
 
         {/* CTA */}
-       
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Transform Your Digital Presence?
+            </h3>
+            <p className="text-gray-300 mb-6">
+              Let's build something amazing together. I specialize in creating high-converting, 
+              performance-optimized web solutions that drive real business results.
+            </p>
+            <a 
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300"
+            >
+              Start Your Project
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
 
       </div>
     </section>
